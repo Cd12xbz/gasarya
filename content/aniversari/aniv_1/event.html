@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="dist/image/Ikon.png" type="image/png" />
+  <title>Sebuah Perjalanan Cinta</title>
+  <link rel="stylesheet" href="dist/css/event.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-image: url("dist/image/Ganeo_1.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .btn-love {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 10px 25px;
+      border-radius: 50px;
+      background-color: #ff4d6d;
+      border: none;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-love:hover {
+      background-color: #ff1e4a;
+    }
+
+    /* Hapus styling tombol musik karena tidak digunakan lagi */
+  </style>
+</head>
+<body>
+  <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="overlay text-white text-center">
+      <h1>Haloo Sayangkuu Ganesia Gasalin</h1>
+      <p>
+        Hari ini adalah hari yang sangat spesial, karena tepat satu tahun yang lalu, kita memulai perjalanan indah ini bersama. <br>
+        Tidak terasa, waktu berjalan begitu cepat. Setiap hari yang kita lalui penuh dengan warna ada tawa, ada air mata, ada rindu, ada amarah, tetapi yang paling penting, selalu ada kita yang bertahan satu sama lain. <br>
+      </p>
+      <p>
+        Setahun ini bukan hanya tentang kebersamaan, tetapi juga tentang bagaimana kita belajar memahami, menghargai, dan mencintai lebih dalam lagi. <br>
+        Kita melewati begitu banyak hal seperti tantangan, perbedaan, pertengkaran kecil, dan bahkan pertengkaran besar yang akhirnya membuat kita semakin kuat. <br>
+        Aku sadar, aku bukanlah pasangan yang sempurna, dan ada banyak kesalahan yang telah aku lakukan selama ini. <br>
+        Untuk itu, aku ingin meminta maaf atas segala hal yang pernah membuatmu sedih, kecewa, tidak nyaman dan aman.
+      </p>
+      <p>
+        Namun hari ini, di momen istimewa ini, aku berjanji dan melakukan janjiku. Aku akan terus menjadi yang terbaik untukmu, untuk kita. <br>
+        Aku ingin membuatmu bahagia, bukan hanya hari ini, tetapi di setiap detik yang akan kita lalui bersama. <br>
+        Aku ingin merayakan setiap kebersamaan dengan penuh cinta dan kasih sayang, karena kamu adalah bagian terindah dalam hidupku. <br>
+        Selamat satu tahun anniversary, sayang. Semoga ini menjadi awal dari banyak tahun bahagia yang akan kita jalani bersama. Aku mencintaimu, sekarang dan selamanya. ❤️✨
+      </p>
+
+      <!-- Tombol Klik Mee - Ditambahkan event untuk unmute musik setelah klik -->
+      <a href="surprise.html" class="btn btn-love" id="loveButton">❤️❤️For You Babe❤️❤️</a>
+    </div>
+  </div>
+
+  <!-- Added audio element for automatic music playback -->
+  <audio id="bgMusic" loop preload="auto"> <!-- Mulai muted untuk autoplay diizinkan -->
+    <source src="dist/Music/Can You Feel the Love Tonight (Instrumental).mp3" type="audio/mpeg"> <!-- Path musik yang Anda tentukan -->
+    <!-- Jika punya file OGG, tambahkan: <source src="dist/Music/Can You Feel the Love Tonight (Instrumental).ogg" type="audio/ogg"> -->
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Inisialisasi musik saat DOM loaded
+    document.addEventListener("DOMContentLoaded", function () {
+      const bgMusic = document.getElementById("bgMusic");
+      const loveButton = document.getElementById("loveButton");
+      bgMusic.volume = 0.3; // Set volume rendah (30%) agar tidak mengganggu bacaan teks (adjust as needed)
+
+      // Coba autoplay muted (tanpa suara awal, diizinkan browser)
+      bgMusic.play().then(() => {
+        console.log("Music autoplay started (muted)");
+      }).catch(error => {
+        console.log("Autoplay prevented:", error);
+      });
+
+      // Unmute musik setelah user berinteraksi (klik tombol utama "For You Babe")
+      // Ini memastikan suara muncul setelah interaksi alami, tanpa tombol tambahan
+      loveButton.addEventListener('click', function(event) {
+        // Delay kecil agar navigasi ke surprise.html tidak terganggu
+        setTimeout(() => {
+          if (bgMusic.muted) {
+            bgMusic.muted = false;
+            console.log("Music unmuted after user interaction");
+          }
+          // Pastikan musik playing
+          if (bgMusic.paused) {
+            bgMusic.play().catch(error => {
+              console.log("Play after unmute failed:", error);
+            });
+          }
+        }, 100); // Delay 100ms untuk sinkronisasi
+      }, { once: true }); // Hanya sekali, agar tidak berulang
+
+      // Alternatif: Unmute setelah klik/ touch di mana saja pada body (jika ingin lebih luas)
+      // document.body.addEventListener('click', function() {
+      //   if (bgMusic.muted) {
+      //     bgMusic.muted = false;
+      //     console.log("Music unmuted after any click");
+      //   }
+      //   if (bgMusic.paused) {
+      //     bgMusic.play();
+      //   }
+      // }, { once: true });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* Global Styles */
+body {
+    background-color: #ffe6e6;
+    font-family: 'Arial', sans-serif;
+    color: #d63384;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+}
+
+.plain_text {
+    background-color: #ffccdd;
+    background-image: url('../picture/background.jpeg');
+    background-position: auto;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh; /* Limit the height to 80% of the viewport height */
+    overflow-y: auto; /* Enable vertical scroll when content overflows */
+}
+
+.plain_text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify; /* Justify text alignment */
+}
+
+.plain_text h2 {
+    font-size: 2rem;
+    color: #ff6699;
+    padding-top: 30px;
+    text-align: center; /* Keep heading centered */
+}
+
+/* Style for buttons */
+a.btn, button {
+    background-color: #ff6699;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from hyperlink */
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+a.btn:hover, button:hover {
+    background-color: #ff3366;
+}
+
+button:focus, a.btn:focus {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Centering container in the middle of the screen */
+html, body {
+    height: 100%;
+}

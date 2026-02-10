@@ -1,0 +1,43 @@
+/* Global Styles */
+body {
+    background-color: #ffe6e6;
+    font-family: 'Arial', sans-serif;
+    color: #d63384;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #ff6699;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.video {
+    margin: 20px auto;
+}
+
+video {
+    width: 720px;
+    height: 405px; /* Aspect ratio 16:9 */
+    border: 5px solid #ff6699;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 40px;
+    background-color: #ff6699;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+}

@@ -1,0 +1,65 @@
+body {
+    background-color: #ff8ce6;
+}
+
+.carousel-inner img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background-color: transparent;
+    object-fit: cover;
+    z-index: -1;
+    max-width: 80%; /* Supaya teks tidak terlalu melebar */
+}
+
+/* Teks dalam paragraf menjadi rata kiri-kanan */
+p {
+    text-align: justify;
+    max-width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    font-size: 16pt;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffff;
+}
+
+#btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+button, a.button {
+    background-color: red;
+    color: white !important; /* Pastikan teks selalu putih */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover, a.button:hover {
+    background-color: darkred;
+    color: white !important;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
